@@ -1,6 +1,6 @@
 import json
 from itertools import combinations
-from tqdm import tqdm
+#from tqdm import tqdm
 
 #### ---- Functions ---- ####
 def apriori(transaction_list:list, minsup:float=0.02):
@@ -11,7 +11,9 @@ def apriori(transaction_list:list, minsup:float=0.02):
     not_freq_candidates = [] 
     frequents = []
     
-    for i in tqdm(range(1, len(itemset))):
+    print("Lunghezza itemset:",len(itemset))
+    for i in range(1, len(itemset)):
+        print(f"iterazione {i} di {len(itemset)}")
         
         # scan the transaction list to count the support
         supports = scan(transaction_list, k=i)
